@@ -1,0 +1,9 @@
+.header {
+  width: 100%;
+  height: 30px;
+  background-color: #999;
+}
+.header .w {
+  background-color: red;
+  height: 30px;
+}
