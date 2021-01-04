@@ -12,40 +12,47 @@
   justify-content: space-between;
 }
 .header .w .location {
-  width: 50px;
+  width: 58px;
   height: 30px;
   line-height: 30px;
   cursor: pointer;
+  text-align: center;
 }
 .header .w .location .icon-location {
-  color: red;
+  color: #f10215;
 }
-.header .w .location:hover {
+.header .w .hover:hover {
   background-color: #fff;
-  width: 48px;
-  border: 1px solid #908a89;
-  margin-left: -1px;
-  border-bottom: none;
-  border-top: none;
+  color: #f10215;
 }
 .header .w .nav-wrap {
   display: flex;
+  height: 100%;
 }
 .header .w .nav-wrap .login-text {
   margin-right: 5px;
+  line-height: 30px;
+}
+.header .w .nav-wrap .nav {
+  height: 100%;
 }
 .header .w .nav-wrap .nav ul {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 .header .w .nav-wrap .nav ul li {
+  width: 70px;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
   position: relative;
 }
 .header .w .nav-wrap .nav ul li:nth-child(even) {
   width: 1px;
   height: 12px;
   background-color: #bdb6b4;
-  margin: 0 20px;
+  margin: 0 4px;
 }
 .header .w .nav-wrap .nav ul li:nth-child(odd) {
   cursor: pointer;
@@ -59,18 +66,17 @@
 .header .w .nav-wrap .nav ul li:nth-child(9) {
   color: #f10215;
 }
-.header .w .nav-wrap .nav ul .triangle::after {
-  content: '';
+.header .w .nav-wrap .nav ul .triangle {
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-bottom: 1px solid #908a89;
   border-right: 1px solid #908a89;
-  transform: rotate(45deg);
   /*旋转角度*/
+  transform: rotate(45deg);
   position: absolute;
-  top: 4px;
-  right: -10px;
+  top: 12px;
+  right: 4px;
 }
 input {
   outline: none;

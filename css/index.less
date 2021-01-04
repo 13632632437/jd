@@ -13,38 +13,48 @@
         justify-content: space-between;
 
         .location {
-            width: 50px;
+            width: 58px;
             height: 30px;
             line-height: 30px;
             cursor: pointer;
+            text-align: center;
 
             .icon-location {
-                color: red;
+                color: #f10215;
             }
 
+
+        }
+
+        .hover {
             &:hover {
                 background-color: #fff;
-                width: 48px;
-                border: 1px solid rgb(144, 138, 137);
-                margin-left: -1px;
-                border-bottom: none;
-                border-top: none;
+                color: #f10215;
             }
         }
 
         .nav-wrap {
             display: flex;
+            height: 100%;
 
             .login-text {
                 margin-right: 5px;
+                line-height: 30px;
             }
 
             .nav {
+                height: 100%;
+
                 ul {
                     display: flex;
                     align-items: center;
+                    height: 100%;
 
                     li {
+                        width: 70px;
+                        height: 100%;
+                        line-height: 30px;
+                        text-align: center;
                         position: relative;
 
                         // 选中偶数项(竖线)
@@ -52,12 +62,13 @@
                             width: 1px;
                             height: 12px;
                             background-color: rgb(189, 182, 180);
-                            margin: 0 20px;
+                            margin: 0 4px;
                         }
 
                         // 选中奇数项（文字）变成小手
                         &:nth-child(odd) {
                             cursor: pointer;
+
                         }
 
                         // 选中最后一个（最后一个竖线不显示）
@@ -75,22 +86,19 @@
                             color: #f10215;
                         }
                     }
+
                     // 画小箭头
                     .triangle {
-                        // 伪元素
-                        &::after {
-                            content: '';
-                            display: inline-block;
-                            width: 5px;
-                            height: 5px;
-                            border-bottom: 1px solid rgb(144, 138, 137);
-                            border-right: 1px solid rgb(144, 138, 137);
-                            transform: rotate(45deg);
-                            /*旋转角度*/
-                            position: absolute;
-                            top: 4px;
-                            right: -10px;
-                        }
+                        display: inline-block;
+                        width: 4px;
+                        height: 4px;
+                        border-bottom: 1px solid rgb(144, 138, 137);
+                        border-right: 1px solid rgb(144, 138, 137);
+                        /*旋转角度*/
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 12px;
+                        right: 4px;
                     }
                 }
             }
