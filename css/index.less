@@ -24,6 +24,11 @@
 
             &:hover {
                 background-color: #fff;
+                width: 48px;
+                border: 1px solid rgb(144, 138, 137);
+                margin-left: -1px;
+                border-bottom: none;
+                border-top: none;
             }
         }
 
@@ -40,18 +45,21 @@
                     align-items: center;
 
                     li {
+                        position: relative;
 
                         // 选中偶数项(竖线)
                         &:nth-child(even) {
                             width: 1px;
                             height: 12px;
                             background-color: rgb(189, 182, 180);
-                            margin: 0 15px;
+                            margin: 0 20px;
                         }
+
                         // 选中奇数项（文字）变成小手
-                        &:nth-child(odd){
+                        &:nth-child(odd) {
                             cursor: pointer;
                         }
+
                         // 选中最后一个（最后一个竖线不显示）
                         &:last-child {
                             display: none;
@@ -61,9 +69,27 @@
                         &:first-child {
                             color: #f10215;
                         }
+
                         //第五个也是红色(因为还有竖线，所以文字是第九个)
-                        &:nth-child(9){
-                            color: red;
+                        &:nth-child(9) {
+                            color: #f10215;
+                        }
+                    }
+                    // 画小箭头
+                    .triangle {
+                        // 伪元素
+                        &::after {
+                            content: '';
+                            display: inline-block;
+                            width: 5px;
+                            height: 5px;
+                            border-bottom: 1px solid rgb(144, 138, 137);
+                            border-right: 1px solid rgb(144, 138, 137);
+                            transform: rotate(45deg);
+                            /*旋转角度*/
+                            position: absolute;
+                            top: 4px;
+                            right: -10px;
                         }
                     }
                 }

@@ -22,6 +22,11 @@
 }
 .header .w .location:hover {
   background-color: #fff;
+  width: 48px;
+  border: 1px solid #908a89;
+  margin-left: -1px;
+  border-bottom: none;
+  border-top: none;
 }
 .header .w .nav-wrap {
   display: flex;
@@ -33,11 +38,14 @@
   display: flex;
   align-items: center;
 }
+.header .w .nav-wrap .nav ul li {
+  position: relative;
+}
 .header .w .nav-wrap .nav ul li:nth-child(even) {
   width: 1px;
   height: 12px;
   background-color: #bdb6b4;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 .header .w .nav-wrap .nav ul li:nth-child(odd) {
   cursor: pointer;
@@ -49,7 +57,20 @@
   color: #f10215;
 }
 .header .w .nav-wrap .nav ul li:nth-child(9) {
-  color: red;
+  color: #f10215;
+}
+.header .w .nav-wrap .nav ul .triangle::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-bottom: 1px solid #908a89;
+  border-right: 1px solid #908a89;
+  transform: rotate(45deg);
+  /*旋转角度*/
+  position: absolute;
+  top: 4px;
+  right: -10px;
 }
 input {
   outline: none;
