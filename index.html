@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,52 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
     <div class="header">
         <div class="w"></div>
     </div>
+    <form class="form">
+        <div class="input-wrap">
+            <label class="input-label">旧密码：</label>
+            <input type="password" id="old_password">
+            <div class="tip">密码仅支持6-18的数字和字母</div>
+        </div>
+        <div class="input-wrap">
+            <label class="input-label">新密码：</label>
+            <input type="password" id="new_password">
+            <div class="tip">密码仅支持6-18的数字和字母</div>
+        </div>
+        <div class="input-wrap">
+            <label class="input-label">确认密码：</label>
+            <input type="password" id="rep_password">
+            <div class="tip">密码仅支持6-18的数字和字母</div>
+        </div>
+        <div class="input-wrap">
+            <button class="submit-btn">提交</button>
+        </div>
+    </form>
+    <script>
+        var oldPassword = getId("old_password");
+        var newPassword = getId("new_password");
+        oldPassword.oninput = function (e) {
+            check(e,this)
+        }
+        newPassword.oninput = function (e) {
+            check(e,this)
+        }
+        function check(e,that) {
+            if (that.value.length < 8) {
+                that.nextElementSibling.style['display'] = 'block'
+
+            } else {
+                that.nextElementSibling.style['display'] = 'none'
+            }
+        }
+        function getId(id) {
+            return document.getElementById(id)
+        }
+    </script>
 </body>
+
 </html>
