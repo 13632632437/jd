@@ -1,11 +1,74 @@
 .header {
     width: 100%;
     height: 30px;
-    background-color: #999;
+    background-color: #e3e4e5;
 
     .w {
-        background-color: pink;
         height: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: rgb(144, 138, 137);
+        display: flex;
+        justify-content: space-between;
+
+        .location {
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+
+            .icon-location {
+                color: red;
+            }
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        .nav-wrap {
+            display: flex;
+
+            .login-text {
+                margin-right: 5px;
+            }
+
+            .nav {
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+
+                        // 选中偶数项(竖线)
+                        &:nth-child(even) {
+                            width: 1px;
+                            height: 12px;
+                            background-color: rgb(189, 182, 180);
+                            margin: 0 15px;
+                        }
+                        // 选中奇数项（文字）变成小手
+                        &:nth-child(odd){
+                            cursor: pointer;
+                        }
+                        // 选中最后一个（最后一个竖线不显示）
+                        &:last-child {
+                            display: none;
+                        }
+
+                        //找到第一个变成红色
+                        &:first-child {
+                            color: #f10215;
+                        }
+                        //第五个也是红色(因为还有竖线，所以文字是第九个)
+                        &:nth-child(9){
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

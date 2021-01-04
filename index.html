@@ -7,11 +7,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
 </head>
 
 <body>
     <div class="header">
-        <div class="w"></div>
+        <div class="w">
+            <div class="location"><span class="iconfont icon-location"></span> 北京</div>
+            <div class="nav-wrap">
+                <div class="login-text">你好，请登录</div>
+                <div class="nav">
+                    <ul>
+                        <li>免费注册</li>
+                        <li></li>
+                        <li>我的订单</li>
+                        <li></li>
+                        <li>我的京东</li>
+                        <li></li>
+                        <li>京东会员</li>
+                        <li></li>
+                        <li>企业采购</li>
+                        <li></li>
+                        <li>客户服务</li>
+                        <li></li>
+                        <li>网站导航</li>
+                        <li></li>
+                        <li>手机京东</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <form class="form">
         <div class="input-wrap">
@@ -37,17 +63,17 @@
         var oldPassword = getId("old_password");
         var newPassword = getId("new_password");
         oldPassword.oninput = function (e) {
-            check(e,this)
+            check(e,this);
         }
         newPassword.oninput = function (e) {
-            check(e,this)
+            check(e,this);
         }
         function check(e,that) {
             if (that.value.length < 8) {
-                that.nextElementSibling.style['display'] = 'block'
+                that.nextElementSibling.style['display'] = 'block';
 
             } else {
-                that.nextElementSibling.style['display'] = 'none'
+                that.nextElementSibling.style['display'] = 'none';
             }
         }
         function getId(id) {
