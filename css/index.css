@@ -87,8 +87,8 @@ input {
   width: 400px;
   height: 300px;
   padding: 30px;
-  margin: 100px auto;
   border: 1px solid #ccc;
+  float: left;
 }
 .form .input-wrap {
   height: 60px;
@@ -106,4 +106,26 @@ input {
   color: red;
   margin: 2px 0 0 106px;
   display: none;
+}
+table {
+  border: 1px solid #000;
+}
+table input {
+  width: 100%;
+  height: 100%;
+}
+table tr {
+  height: 30px;
+}
+table tr td {
+  border: 1px solid #000;
+  min-width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+table tr td .radio {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
 }

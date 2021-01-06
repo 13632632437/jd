@@ -116,8 +116,9 @@ input {
     width: 400px;
     height: 300px;
     padding: 30px;
-    margin: 100px auto;
+    // margin: 100px auto;
     border: 1px solid #ccc;
+    float: left;
 
     .input-wrap {
         height: 60px;
@@ -139,4 +140,29 @@ input {
             display: none;
         }
     }
+}
+
+table {
+    border: 1px solid #000;
+    input {
+        width: 100%;
+        height: 100%;
+    }
+    tr {
+        height: 30px;
+
+        td {
+            border: 1px solid #000;
+            min-width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            .radio {
+                width: 15px;
+                height: 15px;
+                vertical-align: middle;
+            }
+        }
+    }
+
 }
