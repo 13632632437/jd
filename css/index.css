@@ -17,11 +17,94 @@
   line-height: 30px;
   cursor: pointer;
   text-align: center;
+  position: relative;
+  border: 1px solid transparent;
 }
 .header .w .location .icon-location {
   color: #f10215;
 }
+.header .w .location .location-hover {
+  width: 300px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  color: #908a89;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  display: none;
+}
+.header .w .location .location-hover .city-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.header .w .location .location-hover .city-list li {
+  width: 20%;
+}
+.header .w .location .location-hover .city-list li a {
+  color: #908a89;
+  text-decoration: none;
+  padding: 5px;
+}
+.header .w .location .location-hover .city-list .active {
+  background-color: red;
+  color: #fff;
+}
+.header .w .location .location-hover .divide-line {
+  width: 262px;
+  height: 0;
+  margin: 15px auto;
+  border-bottom: 1px dotted #eee;
+}
+.header .w .location .location-hover .area-self {
+  width: 100%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.header .w .location .location-hover .area-self p {
+  margin-bottom: 10px;
+}
+.header .w .location .location-hover .area-self ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .w .location .location-hover .area-self ul li {
+  width: 50%;
+}
+.header .w .location .location-hover .area-self ul li .icon {
+  width: 20px;
+  height: 13px;
+  display: inline-block;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAbCAYAAADYtRcLAAAAAklEQVR4AewaftIAAALFSURBVO3BTYhVVQAA4O9cn454xr+F0dA1FbOwQDBOgkFQizYtslzUokhCyBZCUWRBm9JVWSujRSW1iRDBCMKiaNMiqQ5URIU/pOgNRaJMHME3+m7PrpHKTMHj8Rim+b5Q17W/VSkNYzMewM04hD04jp1lzm2XCSG4Wt2lR6HLVb4Yvr7Wo5ZLqpRuxF4s949RvICleLVKaXuZ81EDNHpmlssFjdp/a+mqUhrGXix3pTfLnDv4uUrpKWyvUnq2zPmcAblp068EdAhFbe41HQGnTxbqTqBAbVwtjc1Y7kp7MaNKaWmZ85Ey57Eqpc/xGHaYQLj9Pf20+MVT/hIQOfTlDGd/v2DVXagxhmBcLY37cARLEDTuwUK8oatKaQ7ewgHsMCgHNeYFh3+Mdm9dZOTO+81fsMeSeIQLqI2r0PiozHkZTmhsw+P4tMy51ngfC7DSoBXoDPltf3L83Byj7aX++OkO9YUZFCbU0ggaBzGC3WXO31cpjeiqUgpYg4CZ/sUPp5/Tq1uMYwUKdM6J60+497pTOoe3mHnrYmFlzRhq42pptDTW4SV8XKX0LR7VVeZcVyk9iA/xlQE6tnW+i2rMLo5aNW+YMOzsrsrRsblCMKGWxi9VSivKnA9iU5XSK3ga31UpPVzm/FmZ8ydVShsx0wDtf32RRq2lRkdjnvMCgokUGjvxZJXSLI1dGMW1eERXldIcrME7BijGthjbYhwzFM8bih1DsWMonhfjmBjbYmyLsS3GthjbYmyLsS3Ude2iKqUSW/BamfOBKqUNeBvLsBAbsa3M+aRLQggms8IlZc4VnsHdVUovYwPO4HmsxhNlzidNmzZt2v9RqKn1KBBc5d2R1bUePXT8m6CPWvps3aF9ehZn66fCFNbSZ2tvW2+yKExhLXWtZyGYzFr6bN/Xe/RqOM7WT4UprKXPPrhhrcmiMIX9CRYv4u0MBGIsAAAAAElFTkSuQmCC);
+}
+.header .w .location .location-hover .area-self ul li:nth-child(2) .icon {
+  background-position: -36px 0;
+}
+.header .w .location .location-hover .area-self ul li:nth-child(3) .icon {
+  background-position: -72px 0;
+}
+.header .w .location .location-hover .area-self ul li:nth-child(4) .icon {
+  background-position: -72px 13px;
+}
+.header .w .location .location-hover .area-self ul li:nth-child(5) .icon {
+  background-position: -72px 13px;
+}
+.header .w .location .location-hover li a:hover {
+  color: #f10215;
+}
+.header .w .location:hover .location-hover {
+  display: block;
+}
 .header .w .hover:hover {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-top: none;
   background-color: #fff;
   color: #f10215;
 }
@@ -56,6 +139,7 @@
 }
 .header .w .nav-wrap .nav ul li:nth-child(odd) {
   cursor: pointer;
+  border: 1px solid transparent;
 }
 .header .w .nav-wrap .nav ul li:last-child {
   display: none;
