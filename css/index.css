@@ -40,7 +40,6 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .header .w .location .location-hover .city-list li {
   width: 20%;
