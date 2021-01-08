@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+    <style>
+        .more {
+            display: inline-block;
+            color: blue;
+            position: relative;
+        }
+        .tip{
+            width: 100px;
+            color: #000;
+            display: none;
+            position: absolute;
+            top: 0;
+            background-color: #fff;
+            left: 50px;
+            border: 1px solid #000;
+        }
+        .more:hover .tip{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>填表日期</td>
+                <td>填表日期</td>
+            </tr>
+            <tr>
+                <td>这是一个很寂寞的天，下着有些伤心的雨</td>
+                <td>填表日期填表日期填表日期填表日期填表日期填表日期填表日期</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script>
+        let td = document.getElementsByTagName("td");
+        console.log(td);
+        for (let i = 0; i < td.length; i++) {
+            console.log(td[i].innerText);
+            if (td[i].innerText.length > 12) {
+                td[i].innerHTML = td[i].innerText.substr(0, 12) + "<div class='more'>more"+"<div class='tip'>" + td[i].innerText + "</div></div>"
+            }
+            td[i].innerText
+
+        }
+    </script>
+</body>
+
+</html>
