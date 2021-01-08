@@ -18,16 +18,141 @@
             line-height: 30px;
             cursor: pointer;
             text-align: center;
+            position: relative;
+            border: 1px solid transparent;
 
             .icon-location {
                 color: #f10215;
             }
 
+            // 浮框
+            .location-hover {
+                width: 300px;
+                padding: 10px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-top: none;
+                box-shadow: 1px 2px 1px rgba(0, 0, 0, .1);
+                color: rgb(144, 138, 137);
+                position: absolute;
+                top: 30px;
+                left: 0;
+                // 浮框默认隐藏
+                display: none;
 
+
+                // 城市列表
+                .city-list {
+                    width: 100%;
+                    // 所有的li一行显示
+                    display: flex;
+                    // 每一个li是20%，多余的自动换行
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 20%;
+
+                        a {
+                            color: rgb(144, 138, 137);
+                            text-decoration: none;
+                            padding: 5px;
+                        }
+                    }
+
+                    //当前城市红色背景白色文字
+                    .active {
+                        background-color: red;
+                        color: #fff;
+                    }
+                }
+
+                // 分隔线
+                .divide-line {
+                    width: 262px;
+                    height: 0;
+                    margin: 15px auto;
+                    border-bottom: 1px dotted #eee;
+
+                }
+
+                // 地区专享
+                .area-self {
+                    width: 100%;
+                    padding: 0 18px;
+                    box-sizing: border-box;
+                    text-align: left;
+
+                    p {
+                        margin-bottom: 10px;
+                    }
+
+                    ul {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        li {
+                            width: 50%;
+
+                            // 国旗图标（精灵图（自行百度，就是一张图上有很多小图标，通过移动显示一小部分））
+                            .icon {
+                                width: 20px;
+                                height: 13px;
+                                display: inline-block;
+                                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAbCAYAAADYtRcLAAAAAklEQVR4AewaftIAAALFSURBVO3BTYhVVQAA4O9cn454xr+F0dA1FbOwQDBOgkFQizYtslzUokhCyBZCUWRBm9JVWSujRSW1iRDBCMKiaNMiqQ5URIU/pOgNRaJMHME3+m7PrpHKTMHj8Rim+b5Q17W/VSkNYzMewM04hD04jp1lzm2XCSG4Wt2lR6HLVb4Yvr7Wo5ZLqpRuxF4s949RvICleLVKaXuZ81EDNHpmlssFjdp/a+mqUhrGXix3pTfLnDv4uUrpKWyvUnq2zPmcAblp068EdAhFbe41HQGnTxbqTqBAbVwtjc1Y7kp7MaNKaWmZ85Ey57Eqpc/xGHaYQLj9Pf20+MVT/hIQOfTlDGd/v2DVXagxhmBcLY37cARLEDTuwUK8oatKaQ7ewgHsMCgHNeYFh3+Mdm9dZOTO+81fsMeSeIQLqI2r0PiozHkZTmhsw+P4tMy51ngfC7DSoBXoDPltf3L83Byj7aX++OkO9YUZFCbU0ggaBzGC3WXO31cpjeiqUgpYg4CZ/sUPp5/Tq1uMYwUKdM6J60+497pTOoe3mHnrYmFlzRhq42pptDTW4SV8XKX0LR7VVeZcVyk9iA/xlQE6tnW+i2rMLo5aNW+YMOzsrsrRsblCMKGWxi9VSivKnA9iU5XSK3ga31UpPVzm/FmZ8ydVShsx0wDtf32RRq2lRkdjnvMCgokUGjvxZJXSLI1dGMW1eERXldIcrME7BijGthjbYhwzFM8bih1DsWMonhfjmBjbYmyLsS3GthjbYmyLsS3Ude2iKqUSW/BamfOBKqUNeBvLsBAbsa3M+aRLQggms8IlZc4VnsHdVUovYwPO4HmsxhNlzidNmzZt2v9RqKn1KBBc5d2R1bUePXT8m6CPWvps3aF9ehZn66fCFNbSZ2tvW2+yKExhLXWtZyGYzFr6bN/Xe/RqOM7WT4UprKXPPrhhrcmiMIX9CRYv4u0MBGIsAAAAAElFTkSuQmCC);
+                            }
+
+                            &:nth-child(2) {
+                                .icon {
+                                    // 平移背景图
+                                    background-position: -36px 0;
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                .icon {
+                                    background-position: -72px 0;
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                .icon {
+                                    background-position: -72px 13px;
+                                }
+                            }
+
+                            &:nth-child(5) {
+                                .icon {
+                                    background-position: -72px 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 浮框里li的文字统一加鼠标移入变成红色
+                li {
+                    a {
+                        &:hover {
+                            color: #f10215;
+                        }
+                    }
+                }
+            }
+
+            // 浮框显示
+            &:hover {
+                .location-hover {
+                    display: block;
+                }
+            }
         }
 
         .hover {
             &:hover {
+                border: 1px solid #ccc;
+                border-bottom: none;
+                border-top: none;
                 background-color: #fff;
                 color: #f10215;
             }
@@ -68,6 +193,8 @@
                         // 选中奇数项（文字）变成小手
                         &:nth-child(odd) {
                             cursor: pointer;
+                            border: 1px solid transparent;
+
 
                         }
 
@@ -144,10 +271,12 @@ input {
 
 table {
     border: 1px solid #000;
+
     input {
         width: 100%;
         height: 100%;
     }
+
     tr {
         height: 30px;
 
@@ -157,6 +286,7 @@ table {
             height: 30px;
             text-align: center;
             line-height: 30px;
+
             .radio {
                 width: 15px;
                 height: 15px;
