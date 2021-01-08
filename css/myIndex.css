@@ -1,0 +1,67 @@
+.header {
+  width: 100%;
+  height: 30px;
+  /* 灰色 */
+  background-color: #e3e4e5;
+}
+.header .w {
+  height: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  /* 字体颜色 */
+  color: #999;
+  font-size: 12px;
+}
+.header .w .location {
+  height: 30px;
+  width: 58px;
+  line-height: 30px;
+  text-align: center;
+}
+.header .w .location .icon-location {
+  color: red;
+}
+.header .w .hover:hover {
+  color: red;
+  /* 白色 */
+  background-color: #fff;
+}
+.header .w .nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  line-height: 30px;
+}
+.header .w .nav-wrap ul {
+  /*  display: inline; */
+  display: flex;
+  margin-left: 10px;
+  /* 小三角画出来的原理：因为那个4*4的小方块的颜色和背景色相同，设置右边和下边边框颜色，让它显示出来，旋转一下就得到了下三角 */
+}
+.header .w .nav-wrap ul li:nth-child(even) {
+  width: 1px;
+  height: 10px;
+  /* margin: 11px 5px 0;（上11px；左、右5px；下0px。） */
+  background-color: #bdb6b4;
+  margin: 11px 8px ;
+  /*  position: relative; */
+}
+.header .w .nav-wrap ul li:nth-child(odd) {
+  cursor: pointer;
+}
+.header .w .nav-wrap ul li:first-child {
+  color: red;
+}
+.header .w .nav-wrap ul li:nth-child(9) {
+  color: #f10215;
+}
+.header .w .nav-wrap ul .triangle {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid #908a89;
+  border-right: 1px solid #908a89;
+  transform: rotate(45deg);
+  margin: 4px 5px;
+}
