@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
@@ -112,10 +113,9 @@
     <div class="search-wrap">
         <div class="w">
             <!-- logo -->
-            <div class="logo">
+            <div class="logoA" >
                 <h1>
-                    <a href="">
-                    </a>
+                    <a href="" id="logoA" style="background-image: url(./image//ia_100000200.png);"></a>
                 </h1>
             </div>
             <!-- 搜索栏 -->
@@ -163,6 +163,23 @@
         </div>
     </div>
     <script>
+        let logoA = document.getElementById("logoA");
+        let logoB = document.getElementById("logoB");
+        // 鼠标移入显示gif
+        logoA.onmouseenter = function () {
+            // gif动画只执行一次，拼接个时间戳就没事了
+            let time = Date.now();
+            logoA.style.backgroundImage = 'url("./image/log-gif.gif?time='+ time+ '")';
+            // gif图大小不标准，移动了下
+            logoA.style.backgroundPosition = "0 -30px";
+        }
+        // 鼠标移出还源，延长点的时间让gif动画结束
+        logoA.onmouseleave = function () {
+            setTimeout(()=>{
+                logoA.style.backgroundImage = 'url("./image/ia_100000200.png")';
+                logoA.style.backgroundPosition = "0 0"
+            },1000)
+        }
     </script>
 </body>
 
