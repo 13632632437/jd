@@ -1,4 +1,5 @@
-@textcolor:rgb(144, 138, 137);
+@textcolor: rgb(144, 138, 137);
+@jdred: #f1021f;
 
 .header {
     width: 100%;
@@ -234,6 +235,7 @@
         }
     }
 }
+
 // 搜索与logo部分
 .search-wrap {
     width: 100%;
@@ -269,7 +271,7 @@
         top: 25px;
         display: flex;
         align-items: center;
-         
+
         height: 32px;
         border: 2px solid #e2231a;
         background: #fff;
@@ -323,6 +325,88 @@
             &:first-child {
                 color: #f10215;
             }
+        }
+    }
+
+    // 热词下的导航
+    .secondary-nav {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        left: 203px;
+
+        li {
+            margin-right: 20px;
+
+            &:nth-child(1) {
+                color: #f10215;
+                font-weight: 600;
+            }
+
+            &:nth-child(2) {
+                color: #f10215;
+                font-weight: 600;
+            }
+        }
+    }
+
+    // 购物车部分
+    .cart {
+        width: 130px;
+        height: 36px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 34px;
+        border: 1px solid #eee;
+        position: absolute;
+        right: 210px;
+        top: 25px;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0 20px;
+        color: @jdred;
+
+        .cart-icon {
+            font-weight: 600;
+            position: relative;
+
+            // 利用伪元素画购物车的数量
+            &::after {
+                content: "0";
+                display: inline-block;
+                width: 18px;
+                height: 12px;
+                background-color: #e1251b;
+                position: absolute;
+                right: -10px;
+                color: #fff;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 12px;
+                border-radius: 6px;
+            }
+        }
+
+        span {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    }
+
+    // 二维码
+    .qr-code {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 76px;
+        height: 76px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        box-sizing: border-box;
+        padding: 5px;
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
