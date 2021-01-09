@@ -65,7 +65,7 @@
   text-align: left;
 }
 .header .w .location .location-hover .area-self p {
-  text-align: center;
+  margin-bottom: 15px;
 }
 .header .w .location .location-hover .area-self ul {
   width: 100%;
@@ -73,27 +73,27 @@
   flex-wrap: wrap;
 }
 .header .w .location .location-hover .area-self ul li {
-  width: 30%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
 }
 .header .w .location .location-hover .area-self ul li .icon {
   width: 20px;
-  height: 13px;
+  height: 15px;
   display: inline-block;
-  background-image: url(img/redfalg.png);
+  background-image: url(../img/redfalg.png);
 }
 .header .w .location .location-hover .area-self ul li:nth-child(2) .icon {
   background-position: -36px 0;
 }
 .header .w .location .location-hover .area-self ul li:nth-child(3) .icon {
-  background-position: -72px 0;
+  background-position: 0 -15px;
 }
 .header .w .location .location-hover .area-self ul li:nth-child(4) .icon {
-  background-position: 0 13px;
+  background-position: -72px 0;
 }
 .header .w .location .location-hover .area-self ul li:nth-child(5) .icon {
-  background-position: -72px 13px;
+  background-position: -72px -15px;
 }
 .header .w .location .location-hover li a:hover {
   color: red;

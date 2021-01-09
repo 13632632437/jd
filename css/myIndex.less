@@ -65,41 +65,41 @@
           box-sizing: border-box;
           text-align: left;
           p {
-            text-align: center;
+            margin-bottom: 15px;
           }
           ul {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             li {
-              width: 30%;
+              width: 50%;
               display: flex;
               flex-wrap: wrap;
               .icon {
                 width: 20px;
-                height: 13px;
+                height: 15px;
                 display: inline-block;
-                background-image: url(./img/redfalg.png);
+                background-image: url(../img/redfalg.png);
               }
               &:nth-child(2) {
                 .icon {
-                  //第一个值：负-左 正-右 第二个值
+                  //第一个值：负-左 正-右 第二个值 正-下  负-上
                   background-position: -36px 0;
                 }
               }
               &:nth-child(3) {
                 .icon {
-                  background-position: -72px 0;
+                  background-position: 0 -15px;
                 }
               }
               &:nth-child(4) {
                 .icon {
-                  background-position: 0 13px;
+                  background-position: -72px 0;
                 }
               }
               &:nth-child(5) {
                 .icon {
-                  background-position: -72px 13px;
+                  background-position: -72px -15px;
                 }
               }
             }
