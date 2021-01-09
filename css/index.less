@@ -233,66 +233,68 @@
     }
 }
 
-input {
-    outline: none;
-    width: 200px;
-    height: 32px;
-}
+.search-wrap {
+    width: 100%;
 
-.form {
-    width: 400px;
-    height: 300px;
-    padding: 30px;
-    // margin: 100px auto;
-    border: 1px solid #ccc;
-    float: left;
-
-    .input-wrap {
-        height: 60px;
-
-        .input-label {
-            display: inline-block;
-            width: 100px;
-        }
-
-        .submit-btn {
-            width: 100px;
-            height: 32px;
-        }
-
-        .tip {
-            font-size: 12px;
-            color: red;
-            margin: 2px 0 0 106px;
-            display: none;
-        }
-    }
-}
-
-table {
-    border: 1px solid #000;
-
-    input {
-        width: 100%;
-        height: 100%;
+    .w {
+        background-color: pink;
+        height: 141px;
+        position: relative;
     }
 
-    tr {
-        height: 30px;
+    .logo {
+        width: 190px;
+        height: 120px;
+        position: absolute;
+        top: 10px;
+        background-color: red;
 
-        td {
-            border: 1px solid #000;
-            min-width: 100px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
+        h1 {
+            width: 100%;
+            height: 100%;
 
-            .radio {
-                width: 15px;
-                height: 15px;
-                vertical-align: middle;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-image: url("../image/ia_100000200.png");
             }
         }
     }
 
+    .search {
+        position: absolute;
+        left: 260px;
+        top: 25px;
+        display: flex;
+        width: 546px;
+        height: 32px;
+        border: 2px solid #e2231a;
+        background: #fff;
+
+        .search-input {
+            width: 425px;
+            height: 26px;
+            padding: 2px 44px 2px 17px;
+            // input自带了个黑边框去掉
+            border: 1px solid transparent;
+            line-height: 26px;
+            font-size: 12px;
+            // 去掉input选中后的黑框框，应该写在base里
+            outline: none;
+        }
+        // 搜索按钮
+        .search-btn{
+            width: 58px;
+            height: 32px;
+            line-height: 32px;
+            background-color: #e1251b;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            border: none;
+            transition: background .2s ease;
+            // 如果按钮上下或者右边有空白间隙，其他浏览器试试，不知道啥问题
+        }
+    }
 }
