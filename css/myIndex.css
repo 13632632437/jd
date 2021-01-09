@@ -18,14 +18,88 @@
   width: 58px;
   line-height: 30px;
   text-align: center;
+  position: relative;
+  border: 1px solid transparent;
 }
 .header .w .location .icon-location {
   color: red;
 }
-.header .w .hover:hover {
-  color: red;
-  /* 白色 */
+.header .w .location .location-hover {
+  width: 300px;
+  padding: 10px;
   background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  top: 30px;
+  left: 0;
+  /* display: none; */
+}
+.header .w .location .location-hover .city-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .w .location .location-hover .city-list li {
+  width: 20%;
+}
+.header .w .location .location-hover .city-list li a {
+  padding: 5px;
+  color: #908a89;
+  text-decoration: none;
+}
+.header .w .location .location-hover .city-list .active {
+  background-color: red;
+  color: #fff;
+}
+.header .w .location .location-hover .divide-line {
+  width: 262px;
+  height: 0;
+  margin: 15px auto;
+  border-bottom: 1px dotted #eee;
+}
+.header .w .location .location-hover .area-self {
+  width: 100%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.header .w .location .location-hover .area-self p {
+  text-align: center;
+}
+.header .w .location .location-hover .area-self ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .w .location .location-hover .area-self ul li {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .w .location .location-hover .area-self ul li .icon {
+  width: 20px;
+  height: 13px;
+  display: inline-block;
+  background-image: url(img/redfalg.png);
+}
+.header .w .location .location-hover .area-self ul li:nth-child(2) .icon {
+  background-position: -36px 0;
+}
+.header .w .location .location-hover .area-self ul li:nth-child(3) .icon {
+  background-position: -72px 0;
+}
+.header .w .location .location-hover .area-self ul li:nth-child(4) .icon {
+  background-position: 0 13px;
+}
+.header .w .location .location-hover .area-self ul li:nth-child(5) .icon {
+  background-position: -72px 13px;
+}
+.header .w .location .location-hover li a:hover {
+  color: red;
+}
+.header .w .location:hover .location-hover {
+  display: block;
 }
 .header .w .nav-wrap {
   display: flex;
@@ -39,12 +113,18 @@
   margin-left: 10px;
   /* 小三角画出来的原理：因为那个4*4的小方块的颜色和背景色相同，设置右边和下边边框颜色，让它显示出来，旋转一下就得到了下三角 */
 }
+.header .w .nav-wrap ul li {
+  width: 70px;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
+}
 .header .w .nav-wrap ul li:nth-child(even) {
   width: 1px;
   height: 10px;
   /* margin: 11px 5px 0;（上11px；左、右5px；下0px。） */
   background-color: #bdb6b4;
-  margin: 11px 8px ;
+  margin: 11px 8px;
   /*  position: relative; */
 }
 .header .w .nav-wrap ul li:nth-child(odd) {

@@ -1,75 +1,169 @@
-.header{
-    width: 100%;
+.header {
+  width: 100%;
+  height: 30px;
+  /* 灰色 */
+  background-color: #e3e4e5;
+  .w {
     height: 30px;
-    /* 灰色 */
-    background-color: #e3e4e5;
-    .w{
-        height: 30px;
-        font-size: 12px;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        /* 字体颜色 */
-        color: #999;
-        font-size: 12px;
-        .location{
-            height: 30px;
-            width: 58px;
-            line-height: 30px;
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    /* 字体颜色 */
+    color: #999;
+    font-size: 12px;
+    .location {
+      height: 30px;
+      width: 58px;
+      line-height: 30px;
+      text-align: center;
+      position: relative;
+      border: 1px solid transparent;
+      .icon-location {
+        color: red;
+      }
+
+      //悬浮框
+      .location-hover {
+        width: 300px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+        top: 30px;
+        left: 0;
+        //浮框默认隐藏
+        /* display: none; */
+        .city-list {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            width: 20%;
+            a {
+              padding: 5px;
+              color: rgb(144, 138, 137);
+              text-decoration: none;
+            }
+          }
+          .active {
+            background-color: red;
+            color: #fff;
+          }
+        }
+        .divide-line {
+          width: 262px;
+          height: 0;
+          margin: 15px auto;
+          border-bottom: 1px dotted #eee;
+        }
+        .area-self {
+          width: 100%;
+          padding: 0 18px;
+          //使padding向里挤内容区，而不是撑大盒子
+          box-sizing: border-box;
+          text-align: left;
+          p {
             text-align: center;
-            .icon-location{
-                color: red;
-            }
-        }
-        .hover{
-            &:hover{
-                color: red;
-                /* 白色 */
-                background-color: #fff;;
-            }
-        }
-        .nav-wrap{
+          }
+          ul {
+            width: 100%;
             display: flex;
-            justify-content: space-between; 
-            height: 30px;
-            line-height: 30px;
-            ul{
-               /*  display: inline; */
-               display: flex;
-                margin-left: 10px;
-                li{
-                    
-                    &:nth-child(even){
-                        width: 1px;
-                        height: 10px;
-                        /* margin: 11px 5px 0;（上11px；左、右5px；下0px。） */
-                        background-color: rgb(189, 182, 180);
-                        margin: 11px 8px ;
-                       /*  position: relative; */
-                    }
-                    &:nth-child(odd){
-                        cursor: pointer;
-                    }
-                    &:first-child{
-                        color: red;
-                    }
-                    &:nth-child(9) {
-                        color: #f10215;
-                    }
+            flex-wrap: wrap;
+            li {
+              width: 30%;
+              display: flex;
+              flex-wrap: wrap;
+              .icon {
+                width: 20px;
+                height: 13px;
+                display: inline-block;
+                background-image: url(./img/redfalg.png);
+              }
+              &:nth-child(2) {
+                .icon {
+                  //第一个值：负-左 正-右 第二个值
+                  background-position: -36px 0;
                 }
-                /* 小三角画出来的原理：因为那个4*4的小方块的颜色和背景色相同，设置右边和下边边框颜色，让它显示出来，旋转一下就得到了下三角 */
-                .triangle{
-                    display: inline-block;
-                    width: 4px;
-                    height: 4px;
-                    border-bottom: 1px solid rgb(144, 138, 137);
-                    border-right: 1px solid rgb(144, 138, 137);
-                    transform: rotate(45deg);
-                    margin: 4px 5px;          
+              }
+              &:nth-child(3) {
+                .icon {
+                  background-position: -72px 0;
                 }
-
+              }
+              &:nth-child(4) {
+                .icon {
+                  background-position: 0 13px;
+                }
+              }
+              &:nth-child(5) {
+                .icon {
+                  background-position: -72px 13px;
+                }
+              }
             }
-
+          }
         }
+        li {
+          a {
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .location-hover {
+          display: block;
+        }
+      }
     }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      line-height: 30px;
+      ul {
+        /*  display: inline; */
+        display: flex;
+        margin-left: 10px;
+        li {
+          width: 70px;
+          height: 100%;
+          line-height: 30px;
+          text-align: center;
+          &:nth-child(even) {
+            width: 1px;
+            height: 10px;
+            /* margin: 11px 5px 0;（上11px；左、右5px；下0px。） */
+            background-color: rgb(189, 182, 180);
+            margin: 11px 8px;
+            /*  position: relative; */
+          }
+          &:nth-child(odd) {
+            cursor: pointer;
+          }
+          &:first-child {
+            color: red;
+          }
+          &:nth-child(9) {
+            color: #f10215;
+          }
+        }
+        /* 小三角画出来的原理：因为那个4*4的小方块的颜色和背景色相同，设置右边和下边边框颜色，让它显示出来，旋转一下就得到了下三角 */
+        .triangle {
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          border-bottom: 1px solid rgb(144, 138, 137);
+          border-right: 1px solid rgb(144, 138, 137);
+          transform: rotate(45deg);
+          margin: 4px 5px;
+        }
+      }
+    }
+  }
 }
