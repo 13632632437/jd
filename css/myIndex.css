@@ -33,7 +33,7 @@
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
   top: 30px;
   left: 0;
-  /* display: none; */
+  display: none;
 }
 .header .w .location .location-hover .city-list {
   width: 100%;
@@ -76,6 +76,7 @@
   width: 50%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 .header .w .location .location-hover .area-self ul li .icon {
   width: 20px;
