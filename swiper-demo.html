@@ -11,6 +11,8 @@
             height: 320px;
             border: 1px solid #000;
             margin: 100px auto;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
@@ -23,8 +25,12 @@
     let bgList = ["./image/1.jpg", "./image/2.jpg", "./image/3.jpg", "./image/4.jpg", "./image/5.jpg"];
     let currentImg = 0;
     console.log(swiper[0], bgList[0]);
-    swiper[0].style.backgroundImage = "./image/1.jpg"
     setInterval(() => {
+        if (currentImg > 4) {
+            currentImg = 0
+        }
+        swiper[0].style.backgroundImage = `url(${bgList[currentImg]})`;
+        currentImg++
     }, 1000)
 </script>
 
