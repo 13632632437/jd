@@ -1,3 +1,6 @@
+@textcolor: rgb(144, 138, 137);
+@jdred: #f1021f;
+
 .header {
     width: 100%;
     height: 30px;
@@ -37,6 +40,7 @@
                 position: absolute;
                 top: 30px;
                 left: 0;
+                z-index: 999;
                 // 浮框默认隐藏
                 display: none;
 
@@ -233,66 +237,176 @@
     }
 }
 
-input {
-    outline: none;
-    width: 200px;
-    height: 32px;
-}
+// 搜索与logo部分
+.search-wrap {
+    width: 100%;
 
-.form {
-    width: 400px;
-    height: 300px;
-    padding: 30px;
-    // margin: 100px auto;
-    border: 1px solid #ccc;
-    float: left;
-
-    .input-wrap {
-        height: 60px;
-
-        .input-label {
-            display: inline-block;
-            width: 100px;
-        }
-
-        .submit-btn {
-            width: 100px;
-            height: 32px;
-        }
-
-        .tip {
-            font-size: 12px;
-            color: red;
-            margin: 2px 0 0 106px;
-            display: none;
-        }
-    }
-}
-
-table {
-    border: 1px solid #000;
-
-    input {
-        width: 100%;
-        height: 100%;
+    .w {
+        height: 141px;
+        position: relative;
     }
 
-    tr {
-        height: 30px;
+    .logoA {
+        width: 190px;
+        height: 120px;
+        position: absolute;
+        top: 10px;
 
-        td {
-            border: 1px solid #000;
-            min-width: 100px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
+        h1 {
+            width: 100%;
+            height: 100%;
 
-            .radio {
-                width: 15px;
-                height: 15px;
-                vertical-align: middle;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                // background-image: url("../image/ia_100000200.png");
             }
         }
     }
 
+    .search {
+        position: absolute;
+        left: 260px;
+        top: 25px;
+        display: flex;
+        align-items: center;
+
+        height: 32px;
+        border: 2px solid #e2231a;
+        background: #fff;
+
+        .search-input {
+            width: 425px;
+            height: 26px;
+            padding: 2px 44px 2px 17px;
+            // input自带了个黑边框去掉
+            border: 1px solid transparent;
+            line-height: 26px;
+            font-size: 12px;
+            // 去掉input选中后的黑框框，应该写在base里
+            outline: none;
+        }
+
+        // 搜索按钮
+        .search-btn {
+            width: 58px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            background-color: #e1251b;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            border: none;
+            transition: background .2s ease;
+            // 如果按钮上下或者右边有空白间隙，其他浏览器试试，不知道啥问题
+        }
+
+        .icon-xiangji {
+            margin-right: 10px;
+        }
+    }
+
+    // 热词
+    .hot-words {
+        position: absolute;
+        left: 260px;
+        top: 65px;
+        display: flex;
+        font-size: 12px;
+        width: 546px;
+        display: flex;
+        justify-content: space-between;
+        // less声明一个变量，看最上面
+        color: @textcolor;
+
+        li {
+            &:first-child {
+                color: #f10215;
+            }
+        }
+    }
+
+    // 热词下的导航
+    .secondary-nav {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        left: 203px;
+
+        li {
+            margin-right: 20px;
+
+            &:nth-child(1) {
+                color: #f10215;
+                font-weight: 600;
+            }
+
+            &:nth-child(2) {
+                color: #f10215;
+                font-weight: 600;
+            }
+        }
+    }
+
+    // 购物车部分
+    .cart {
+        width: 130px;
+        height: 36px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 34px;
+        border: 1px solid #eee;
+        position: absolute;
+        right: 210px;
+        top: 25px;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0 20px;
+        color: @jdred;
+
+        .cart-icon {
+            font-weight: 600;
+            position: relative;
+
+            // 利用伪元素画购物车的数量
+            &::after {
+                content: "0";
+                display: inline-block;
+                width: 18px;
+                height: 12px;
+                background-color: #e1251b;
+                position: absolute;
+                right: -10px;
+                color: #fff;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 12px;
+                border-radius: 6px;
+            }
+        }
+
+        span {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    }
+
+    // 二维码
+    .qr-code {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 76px;
+        height: 76px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        box-sizing: border-box;
+        padding: 5px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }

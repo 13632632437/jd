@@ -66,11 +66,21 @@
                     <div class="area-self">
                         <p>Available Sites</p>
                         <ul>
-                            <li><div class="icon"></div>Global Site</li>
-                            <li><div class="icon"></div>Сайт России</li>
-                            <li><div class="icon"></div>Situs Indonesia</li>
-                            <li><div class="icon"></div>Sitio de España</li>
-                            <li><div class="icon"></div>เว็บไซต์ประเทศไทย</li>
+                            <li>
+                                <div class="icon"></div>Global Site
+                            </li>
+                            <li>
+                                <div class="icon"></div>Сайт России
+                            </li>
+                            <li>
+                                <div class="icon"></div>Situs Indonesia
+                            </li>
+                            <li>
+                                <div class="icon"></div>Sitio de España
+                            </li>
+                            <li>
+                                <div class="icon"></div>เว็บไซต์ประเทศไทย
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +110,75 @@
             </div>
         </div>
     </div>
+    <div class="search-wrap">
+        <div class="w">
+            <!-- logo -->
+            <div class="logoA" >
+                <h1>
+                    <a href="" id="logoA" style="background-image: url(./image//ia_100000200.png);"></a>
+                </h1>
+            </div>
+            <!-- 搜索栏 -->
+            <div class="search">
+                <input class="search-input" type="text" />
+                <div class="iconfont icon-xiangji"></div>
+                <div class="search-btn">
+                    <div class="iconfont icon-sousuo"></div>
+                </div>
+            </div>
+            <!-- 搜索栏下面的热词 -->
+            <ul class="hot-words">
+                <li>会员一元购</li>
+                <li>新房</li>
+                <li>家具五折</li>
+                <li>游戏手机</li>
+                <li>特价冰洗</li>
+                <li>养殖满减</li>
+                <li>运动鞋服</li>
+                <li>二手手机</li>
+                <li>买一赠一</li>
+            </ul>
+            <!-- 导航部分 -->
+            <ul class="secondary-nav">
+                <li>秒杀</li>
+                <li>优惠券</li>
+                <li>PLUS会员</li>
+                <li>品牌闪购</li>
+                <li>拍卖</li>
+                <li>京东家电</li>
+                <li>京东超市</li>
+                <li>京东生鲜</li>
+                <li>京东国际</li>
+                <li>京东金融</li>
+            </ul>
+            <!-- 购物车部分  -->
+            <div class="cart">
+                <div class="cart-icon iconfont icon-gouwuche"></div>
+                <span>我的购物车</span>
+            </div>
+            <!-- 右侧二维码 -->
+            <div class="qr-code">
+                <img src="./image/ia_100000000.jpg" alt="">
+            </div>
+        </div>
+    </div>
     <script>
+        let logoA = document.getElementById("logoA");
+        // 鼠标移入显示gif
+        logoA.onmouseenter = function () {
+            // gif动画只执行一次，拼接个时间戳就没事了
+            let time = Date.now();
+            logoA.style.backgroundImage = 'url("./image/log-gif.gif?time='+ time+ '")';
+            // gif图大小不标准，移动了下
+            logoA.style.backgroundPosition = "0 -30px";
+        }
+        // 鼠标移出还源，延长点的时间让gif动画结束
+        logoA.onmouseleave = function () {
+            setTimeout(()=>{
+                logoA.style.backgroundImage = 'url("./image/ia_100000200.png")';
+                logoA.style.backgroundPosition = "0 0"
+            },1000)
+        }
     </script>
 </body>
 
