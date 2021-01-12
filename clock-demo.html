@@ -51,7 +51,7 @@
         if (mill < 10) { mill = "0" + mill }
         document.getElementsByClassName("clock")[0].innerHTML = day + ":" + hour + ":" + min + ":" + sec + "<span class='mill'>" + mill + "</span>";
         setTimeout(() => {
-            // 1秒结束后再调用自己
+            // 1毫秒结束后再调用自己
             timing()
         }, 1)
     }
