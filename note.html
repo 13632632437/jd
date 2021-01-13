@@ -32,11 +32,38 @@
     <!--  border: 1px solid transparent;去掉边框 -->
     <!-- box-sizing: border-box;使padding向内挤内容 -->
     <!-- 
+        :nth-child(odd)奇数选择器
+        :nth-child(even) 偶数选择器
+        :nth-child(3n+1) 隔选子元素
+        
+        selctor1selector2  两个选择器之间没有空格，为交集选择器
+        :nth-child(n+m)代表选中m及m之后的所有元素
+        :nth-child(-n+m)代表选中m及m之前的所有元素
+        栗子：
         :nth-child(n+6)选中第六个及之后的元素 
         :nth-child(-n+9)选中从第1个到第9个子元素
-        :nth-child(odd)
-        :nth-child(even)
-        :nth-child(3n+1) 隔选子元素
+        tr:nth-child(n+1):nth-child(-n+3) td选中第一到第三行的td元素
+        
+    -->
+    <!--  
+        标签绑定注意事项：
+        生成span->获取span->绑定事件
+        不能获取span->生成span->绑定事件
+        也不能获取span->绑定事件->生成span
+    -->
+    <!-- 
+        setInterval(function(){code}, 1000);或者 setInterval(()=>{code}, 1000); 时间间隔函数，在间隔1000ms之后执行code代码
+        setTimeout(要执行的代码, 等待的毫秒数time)  同上  但是在time时间后只执行一次  前者间隔time后循环执行 
+     -->
+     <!--
+          弹窗居中：position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%); -->
+     <!--
+         q： 宽高都固定的td，可以无限输入，但是超出部分隐藏不显示，光标定位到这个td里边，用键盘上的右箭头可以滑动查看？
+         A：step1 表格设置宽度以及表格布局table{width:1000px;table-layout:fixed} step2 th,td{flex-wrap:nowrap; overflow:hidden;}
+         注意：如果在第二步中加入text-overflow: ellipsis;则超出表格部分不会显示，只会以省略号显示
     -->
 </body>
 </html>

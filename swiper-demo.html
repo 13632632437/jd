@@ -29,8 +29,9 @@
         if (currentImg > 4) {
             currentImg = 0
         }
-        swiper[0].style.backgroundImage = `url(${bgList[currentImg]})`;
-        currentImg++
+       //swiper[0].style.backgroundImage = `url(${bgList[currentImg]})`;
+       swiper[0].style.backgroundImage ='url('+bgList[currentImg]+')';
+       currentImg++;
     }, 1000)
 </script>
 
