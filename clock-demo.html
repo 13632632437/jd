@@ -28,7 +28,7 @@
 </body>
 <script>
     // 结束时间
-    let endTime = '2021-01-14 00:00:00';
+    let endTime = '2021-01-13 18:37:00';
 
     function timing() {
         // 开始时间-当前时间
@@ -37,6 +37,11 @@
         let endDate = new Date(endTime);
         // 时间差 = 结束时间-开始时间 获得毫秒单位得时间差值
         let diff = endDate - startTime;
+        console.log(diff);
+        if (diff <= 0) {
+            document.getElementsByClassName("clock")[0].innerHTML = "00:00:00:00<span class='mill'>000</span>";
+            return
+        }
         // console.log("时间差", diff);
         let day = Math.floor(diff / (1000 * 60 * 60 * 24)),  //计算天数
             hour = Math.floor(diff / (1000 * 60 * 60) % 24),  //计算小时数
