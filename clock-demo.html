@@ -28,13 +28,18 @@
 </body>
 <script>
     // 结束时间
-    let endTime = '2021-01-15 00:00:00';
+
+   // let endTime = '2021-01-15 00:00:00';
+
+    let endTime = '2021-01-14 00:00:00';
+
 
     function timing() {
         // 开始时间-当前时间
         let startTime = new Date();
         // 转换为日期格式
         let endDate = new Date(endTime);
+       // console.log(endDate);转换后的日期格式：Thu Jan 14 2021 00:00:00 GMT+0800 (中国标准时间)
         // 时间差 = 结束时间-开始时间 获得毫秒单位得时间差值
         let diff = endDate - startTime;
         // console.log("时间差", diff);
