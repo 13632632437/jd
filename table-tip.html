@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
     <style>
         .more {
@@ -48,10 +47,8 @@
         for (let i = 0; i < td.length; i++) {
             console.log(td[i].innerText);
             if (td[i].innerText.length > 12) {
-                td[i].innerHTML = td[i].innerText.substr(0, 12) + "<div class='more'>more"+"<div class='tip'>" + td[i].innerText + "</div></div>"
+                td[i].innerHTML = td[i].innerText.substr(0, 12) + "<span class='more'>more"+"<div class='tip'>" + td[i].innerText + "</div></span>"
             }
-            td[i].innerText
-
         }
     </script>
 </body>
