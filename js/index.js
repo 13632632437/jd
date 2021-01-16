@@ -48,3 +48,26 @@ function startSwiper () {
     index++;
   }, 3000);
 }
+
+// 左边小按钮控制轮播图
+let leftBtn = $(".left-btn");
+leftBtn.bind("click", function () {
+  // 先减1,因为当前图片已经看见了,要看到的是上一张
+  index--;
+  // 已经是第一张的时候就跳到最后一张
+  if (index < 0) index = swiperList.length;
+  // show显示 - siblings兄弟元素- hide隐藏
+  // 备注:此时就可以不用fadeIn和fadeOut,淡入淡出动画有时间延迟,点击太快效果不太好
+  swiperList.eq(index).show().siblings().hide();
+})
+// 右边小按钮控制轮播图
+let rightBtn = $(".right-btn");
+rightBtn.bind("click", function () {
+  // 先加1,因为当前图片已经看见了,要看到的是下一张
+  index--;
+  // 已经是最后一张的时候就跳到第一张
+  if (index > swiperList.length) index = 0;
+  // show显示 - siblings兄弟元素- hide隐藏
+  // 备注:此时就可以不用fadeIn和fadeOut,淡入淡出动画有时间延迟,点击太快效果不太好
+  swiperList.eq(index).show().siblings().hide();
+})
