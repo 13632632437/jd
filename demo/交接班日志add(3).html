@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<style>
+		.title {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+			text-align: center;
+			background-color: whitesmoke;
+			margin-bottom: 20px;
+		}
+
+		table {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		td,
+		th {
+			height: 35px;
+			text-align: center;
+			vertical-align: auto;
+		}
+
+		th {
+			width: 100px;
+		}
+
+		td {
+			text-align: left;
+		}
+
+		.tool-div {
+			display: flex;
+			margin-left: 100px;
+		}
+
+		.btn {
+			margin-left: 10px;
+		}
+
+		.toolAndtable {
+			margin-top: 45px;
+		}
+
+		tr:nth-child(n+6) td:nth-child(n+2) div {
+			width: 1000px;
+			height: 55px;
+			text-align: left;
+			overflow-y: scroll;
+			overflow-x: hidden;
+		}
+
+		tr:nth-child(n+1):nth-child(-n+5) td {
+			max-width: 120px;
+			white-space: nowrap;
+			overflow: hidden;
+			word-break: keep-all;
+		}
+	</style>
+	<title></title>
+</head>
+
+<body>
+	<div class="toolAndtable" align="center">
+		<div class="tool-div">
+			<button type="button" class="btn btn-default btn-back">
+				<a href="flagRegist02.html" target="main">
+					<span class="glyphicon glyphicon-arrow-left"> 返回</span>
+				</a>
+			</button>
+			<button type="submit" class="btn btn-default btn-save">提交</button>
+		</div>
+		<div class="title">线上交接班日志添加</div>
+		<table border="1px" cellspacing="0px" cellpadding="0px" align="center">
+			<tr>
+				<th>日期</th>
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<th>组长</th>
+				<td colspan="2"></td>
+
+			</tr>
+			<tr>
+				<th>当班人员</th>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<th>交班负责人</th>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<th>接班负责人</th>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<th rowspan="8">未尽事宜</th>
+				<th>工单号</th>
+				<td>
+					<div>
+
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th>维护信息</th>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<th>当前进展</th>
+				<td colspan="3">
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<th>交接内容</th>
+				<td colspan="3">
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<th>备注1</th>
+				<td colspan="3">
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<th>备注2</th>
+				<td colspan="3">
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<th>备注3</th>
+				<td colspan="3">
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<th>备注4</th>
+				<td colspan="3">
+					<div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<script>
+		var td = document.querySelectorAll("td");
+		for (var i = 0; i < td.length; i++) {
+			td[i].contentEditable = "true";
+		}
+			//let controlTd = document.querySelectorAll("tr:nth-child(n+1):nth-child(-n+5) td");
+	</script>
+</body>
+
+</html>
