@@ -428,6 +428,7 @@ body {
         height: 800px;
         display: flex;
     }
+
     // 分类栏
     .classify {
         width: 190px;
@@ -465,6 +466,7 @@ body {
             }
         }
     }
+
     // 中间大轮播图
     .swiper {
         width: 590px;
@@ -529,6 +531,7 @@ body {
             border-bottom-left-radius: 50%;
         }
     }
+
     // 右侧竖排三小块轮播图
     .small-swiper {
         width: 190px;
@@ -599,11 +602,223 @@ body {
             border-bottom-left-radius: 50%;
         }
     }
+
     // 用户信息栏
-    .user-info {
+    .info {
         width: 190px;
         height: 470px;
         background-color: #fff;
+
+
+        // 用户头像和登录
+        .top {
+            width: 100%;
+            height: 102px;
+            box-sizing: border-box;
+            padding: 0 20px;
+
+            .avatar-and-name {
+                width: 100%;
+                height: 67px;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+
+                // 头像
+                .avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 2px solid #fff;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+                    margin-right: 10px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                // 欢迎登录
+                .user-name {
+                    font-size: 12px;
+                    line-height: 22px;
+
+                    .hover-red {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: @jdred;
+                        }
+                    }
+                }
+
+            }
+
+            // 福利与会员
+            .welfare-member {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+
+                div {
+                    width: 70px;
+                    height: 25px;
+                    line-height: 25px;
+                    border-radius: 12px;
+                    font-size: 13px;
+                    text-align: center;
+                    cursor: pointer;
+
+                }
+
+                .welfare {
+                    background-color: #e1251b;
+                    color: #fff;
+                }
+
+                .member {
+                    background-color: #363634;
+                    color: #e5d790;
+                }
+
+                .hover-bg {
+                    &:hover {
+                        background-color: #c81623;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        // 分割线
+        .divide {
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+            margin: 10px auto;
+        }
+
+        // 京东快报
+        .newspaper {
+            width: 100%;
+
+            .title-wrap {
+                box-sizing: border-box;
+                padding: 0 10px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+
+                .title {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .more {
+                    font-size: 12px;
+                    color: #999999;
+                    position: relative;
+                    width: 50px;
+
+                    .icon {
+                        display: inline-block;
+                        width: 3px;
+                        height: 3px;
+                        border-top: 2px solid #999;
+                        border-right: 2px solid #999;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 5px;
+                        right: 15px;
+                    }
+
+                    &:hover {
+                        color: @jdred;
+
+                        .icon {
+                            border-color: red;
+                        }
+                    }
+                }
+            }
+
+            .news {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0 12px;
+                li {
+                    width: 100%;
+                    font-size: 12px;
+
+                    .headline {
+                        display: inline-block;
+                        width: 100%;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                        .news_tag {
+                            height: 16px;
+                            width: 35px;
+                            display: inline-block;
+                            color: #e1251b;
+                            text-align: center;
+                            list-style: 35px;
+                            background-color: #fdeeed;
+                            margin-right: 10px;
+                        }
+
+                        &:hover {
+                            color: #e1251b;
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        // 服务列表
+        .service-list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: 33%;
+                height: 55px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 12px;
+
+                .img-wrap {
+                    width: 28px;
+                    height: 28px;
+                    margin-bottom: 5px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .hover-img{
+                        display: none;
+                    }
+                }
+                &:hover {
+                   .hover-img{
+                       display: block;
+                   }
+                   .image {
+                       display: none;
+                   }
+                }
+            }
+        }
     }
 
 }
