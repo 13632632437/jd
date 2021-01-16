@@ -71,3 +71,21 @@ rightBtn.bind("click", function () {
   // 备注:此时就可以不用fadeIn和fadeOut,淡入淡出动画有时间延迟,点击太快效果不太好
   swiperList.eq(index).show().siblings().hide();
 })
+
+
+// 竖排的三小块轮播图js
+let smallIndex = 0;
+let smallSwiperList = $(".small-swiper>ul>li");
+// 左边小按钮控制轮播图
+let smallLeftBtn = $(".small-swiper-left-btn");
+smallLeftBtn.bind("click", function () {
+  smallIndex--;
+  if (smallIndex < 0) smallIndex = smallSwiperList.length;
+  smallSwiperList.eq(smallIndex).show().siblings().hide();
+})
+let smallRightBtn = $(".small-swiper-right-btn");
+smallRightBtn.bind("click", function () {
+  smallIndex++;
+  if (smallIndex > smallSwiperList.length) smallIndex = 0;
+  smallSwiperList.eq(smallIndex).show().siblings().hide();
+})

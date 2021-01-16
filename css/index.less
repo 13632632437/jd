@@ -426,10 +426,9 @@ body {
 
     .w {
         height: 800px;
-        background-color: pink;
         display: flex;
     }
-
+    // 分类栏
     .classify {
         width: 190px;
         height: 470px;
@@ -466,11 +465,10 @@ body {
             }
         }
     }
-
+    // 中间大轮播图
     .swiper {
         width: 590px;
         height: 470px;
-        background-color: green;
         margin-right: 10px;
         position: relative;
 
@@ -531,30 +529,77 @@ body {
             border-bottom-left-radius: 50%;
         }
     }
-
+    // 右侧竖排三小块轮播图
     .small-swiper {
         width: 190px;
         height: 470px;
-        background-color: red;
         margin-right: 10px;
+        position: relative;
 
         ul {
             width: 100%;
             height: 100%;
+            position: relative;
 
             li {
                 width: 100%;
-                height: 150px;
-                margin-bottom: 10px;
-                background-color: yellow;
+                height: 100%;
+                // 让三个li重叠起来
+                position: absolute;
 
-                &:last-child {
-                    margin-bottom: 0;
+                img {
+                    width: 100%;
+                    height: 150px;
+                    margin-bottom: 10px;
+                    display: block;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
-    }
 
+        &:hover {
+            .swiper-icon {
+                display: block;
+            }
+        }
+
+        // 左右按钮
+        .swiper-icon {
+            position: absolute;
+            width: 25px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, .15);
+            transform: translate(0, -50%);
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            // 默认不显示,鼠标移入轮播图才显示
+            display: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, .5);
+            }
+        }
+
+        .small-swiper-left-btn {
+            top: 50%;
+            left: 0;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+
+        .small-swiper-right-btn {
+            top: 50%;
+            right: 0;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+    }
+    // 用户信息栏
     .user-info {
         width: 190px;
         height: 470px;

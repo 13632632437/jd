@@ -311,7 +311,6 @@ body {
 }
 .content .w {
   height: 800px;
-  background-color: pink;
   display: flex;
 }
 .content .classify {
@@ -346,7 +345,6 @@ body {
 .content .swiper {
   width: 590px;
   height: 470px;
-  background-color: green;
   margin-right: 10px;
   position: relative;
 }
@@ -397,21 +395,57 @@ body {
 .content .small-swiper {
   width: 190px;
   height: 470px;
-  background-color: red;
   margin-right: 10px;
+  position: relative;
 }
 .content .small-swiper ul {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .content .small-swiper ul li {
   width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.content .small-swiper ul li img {
+  width: 100%;
   height: 150px;
   margin-bottom: 10px;
-  background-color: yellow;
+  display: block;
 }
-.content .small-swiper ul li:last-child {
+.content .small-swiper ul li img:last-child {
   margin-bottom: 0;
+}
+.content .small-swiper:hover .swiper-icon {
+  display: block;
+}
+.content .small-swiper .swiper-icon {
+  position: absolute;
+  width: 25px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.15);
+  transform: translate(0, -50%);
+  line-height: 35px;
+  color: #fff;
+  text-align: center;
+  display: none;
+  cursor: pointer;
+}
+.content .small-swiper .swiper-icon:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.content .small-swiper .small-swiper-left-btn {
+  top: 50%;
+  left: 0;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.content .small-swiper .small-swiper-right-btn {
+  top: 50%;
+  right: 0;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
 .content .user-info {
   width: 190px;
