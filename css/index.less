@@ -335,7 +335,7 @@
     .secondary-nav {
         position: absolute;
         display: flex;
-        bottom: 0;
+        bottom: 10px; // 太贴下边了，往上调了点
         left: 203px;
 
         li {
@@ -430,33 +430,66 @@ body {
         display: flex;
     }
 
-    .classify{
+    .classify {
         width: 190px;
         height: 470px;
         background-color: #fff;
         margin-right: 10px;
+
+        ul {
+            margin-top: 10px;
+
+            li {
+                height: 25px;
+                line-height: 25px;
+                padding-left: 18px;
+                font-size: 0;
+                // li设置font-size为0，子元素设置自己font-size可消除html换行造成的空格
+
+                &:hover {
+                    background-color: #d9d9d9;
+                }
+
+                a {
+                    color: #636363;
+                    font-size: 14px;
+
+                    &:hover {
+                        color: @jdred;
+                    }
+                }
+
+                span {
+                    color: #636363;
+                    font-size: 14px;
+                }
+            }
+        }
     }
 
-    .swiper{
+    .swiper {
         width: 590px;
         height: 470px;
         background-color: green;
         margin-right: 10px;
     }
 
-    .small-swiper{
+    .small-swiper {
         width: 190px;
         height: 470px;
         background-color: red;
         margin-right: 10px;
+
         ul {
             width: 100%;
             height: 100%;
+
             li {
                 width: 100%;
                 height: 150px;
                 margin-bottom: 10px;
                 background-color: yellow;
+
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -464,7 +497,7 @@ body {
         }
     }
 
-    .user-info{
+    .user-info {
         width: 190px;
         height: 470px;
         background-color: #fff;
