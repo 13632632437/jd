@@ -6,9 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <!--  vscode注释快捷键：单行注释，使用“Ctrl + /” 块注释，使用“Alt+Shift+A或者ctrl+alt+A” --> 
+    <!--  
+        vscode快捷键：
+        单行注释:Ctrl + / 或 // 
+        块注释:Alt+Shift+A或ctrl+alt+A
+        代码格式化:alt+shift+f 对注释内部无用
+        出现端口占用问题(server is already running from different workspace)：先按alt+L 再按alt+C
+    --> 
     <!-- git新增的三次命令：第一次git add 第二次 git commit -m"提交描述" 第三次git push -->
-    <!--  代码格式化 -->
     <!-- 设置ul>li水平居中  ul{diplay：inline;} ul>li{display:inline-block}或者设置ul{display:block height=lineheight} -->
     <!-- 所有需要在一行显示的都可以使用display：flex -->
     <!-- a标签不继承颜色<li><a href="javascrip void(0);:"></a>免费注册</a></li> -->
@@ -56,14 +61,125 @@
         setTimeout(要执行的代码, 等待的毫秒数time)  同上  但是在time时间后只执行一次  前者间隔time后循环执行 
      -->
      <!--
-          弹窗居中：position: absolute;
-		  top: 50%;
-		  left: 50%;
-		  transform: translate(-50%, -50%); -->
-     <!--
-         q： 宽高都固定的td，可以无限输入，但是超出部分隐藏不显示，光标定位到这个td里边，用键盘上的右箭头可以滑动查看？
-         A：step1 表格设置宽度以及表格布局table{width:1000px;table-layout:fixed} step2 th,td{flex-wrap:nowrap; overflow:hidden;}
-         注意：如果在第二步中加入text-overflow: ellipsis;则超出表格部分不会显示，只会以省略号显示
+          弹窗水平垂直居中：
+          f1:
+          .div{
+             position: absolute;
+		     top: 50%;
+		     left: 50%;
+             transform: translate(-50%, -50%);
+          }
+          f2:
+          div使用绝对布局，设置margin:auto;并设置top、left、right、bottom的值相等即可，不一定要都是0
+          .div{
+	            width: 300px;
+	            height: 350px;
+	            margin: auto;
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            right: 0;
+	            bottom: 0;
+            }
+        f3:
+        其中align-items属性用于弹性容器，而align-self用于弹性项目
+        align-items: flex-start | flex-end | center | baseline | stretch;
+        align-self: auto | flex-start | flex-end | center | baseline | stretch;
+        .fatherDiv{
+            display:flex ;
+			justify-content: center;
+            align-items: center;
+            width: 200px;
+			height: 200px;
+			background-color: #008000;
+            .sonDiv{
+                width: 50px;
+				height: 50px;
+				background-color: red;
+            }
+        }
+        
     -->
+    <!-- 
+        弹窗水平居中：
+        f1：
+        .div{
+             position: absolute;
+		     left: 50%;
+             transform: translateX(-50%);
+          }
+        f2:
+        .fatherDiv{
+            width: 200px;
+			height: 200px;
+			background-color: #008000;
+            //兼容火狐
+            display: -webkit-flex;
+            display:flex;
+            justify-content:center;
+            .sonDiv{
+                width: 50px;
+				height: 50px;
+				background-color: red;
+            }
+        }
+        f3:
+        .sondiv{
+            margin:0 auto;
+        }
+        flex-direction: column;每个元素独占一行，自上而下放置
+     -->
+    <!--
+         function  函数名(形参列表){//方法体}   ----这样的函数是可以在任何地方调用 
+         函数表达式（又称函数字面量声明）
+         var  变量名=function 函数名(形参列表){ //方法体}---备注：这样的函数只能在它自己这个函数体内被调用,不能被外部访问
+} -->
+<!--
+         表格相关问题总结 ：
+         q:white-space:nowrap与flex-wrap:nowrap
+         A:前者是文本不换行  后者是元素不换行，与display:flex搭配使用
+         q:cellspacing?cellpadding?
+         A:cellspacing是单元格之间得距离  cellpadding是指单元格边与其内容之间得距离
+         q： 控制td宽度固定，可以无限输入，但是超出部分隐藏不显示，光标定位到这个td里边，用键盘上的右箭头可以滑动查看？
+         A：f1：step1 表格设置宽度以及表格布局table{width:1000px;table-layout:fixed} step2 th,td{white-space: nowrap;flex-wrap:nowrap; overflow:hidden;}
+            f2：td{max-width: 120px; white-space: nowrap; overflow: hidden;}
+         q:控制td宽度固定,超出表格内容以省略号显示
+         A：table{width:1000px;table-layout:fixed;}td{white-space: nowrap; overflow:hidden；text-overflow: ellipsis;}
+         q： 表格居中(表格独有属性)？
+         A：align:center  
+         Q：设置表格内部文字居中？
+         A：table{text-align：center；}
+         q：给td加纵向滚轮
+         A：td内部嵌套div，并设置div宽高和td一样，且td没有padding，给div加onscroll属性
+            <td><div></div></td> td{width:200px;height:50px;} td div{width:200px;height:50px;onscroll-y:scroll;onscroll-x:hidden;}
+         q：表格可编辑？
+         A：js遍历设置每一个表格得contentEditable = "true";
+         q：基本表格属性设置？
+         A：<table border="1px"; cellspacing="0px"; cellpadding="0px"; align:center;></table>
+    -->
+    <!--
+         父元素中不设置宽高，子元素浮动会导致父元素高度为0，也即高度塌陷
+        box-sizing:border-box;会导致padding向元素内部挤
+        -->
+<!--弹性布局display:flex,以及flex得六个属性https://www.jianshu.com/p/d9373a86b748 https://www.cnblogs.com/smileZAZ/p/14262660.html-->
+<!--
+    
+     弹窗实现步骤：
+            创建蒙层popLayer(默认z-index属性值比弹框Z-index属性值低)
+            创建点击元素(并绑定弹框函数popBox())；
+            创建弹框，默认display:none;弹框内部设置关闭按钮，并绑定关闭弹框函数(closeBox())
+     标签绑定注意事项：
+        生成待绑定标签->获取待绑定标签->给待绑定标签绑定事件
+-->
+<!--
+     innerText：标签内部得所有文本内容  innerHtml：标签内部嵌套的标签以及文本内容  
+    outerText标签内部文本内容  outerHtml：标签本身以及嵌套得标签以及其内部所有文本内容
+    //txt会追加到td层  而不是内嵌得div层
+    var td = document.getElementsByTagName("td");
+    var txt = document.createTextNode("hello td[0]");
+    td[0].appendChild(txt);
+-->
+<!-- z-index要和position(absolute/fixed)配合使用，不然则会失效 -->
+<!-- position:relative相对定位 -->
 </body>
 </html>

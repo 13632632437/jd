@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        text-align: center;
+        /* 文本不换行 */
+        white-space: nowrap;
+        font-size: 12px;
+      }
+      th,
+      td {
+        min-width: 100px;
+        height: 30px;
+      }
+      .popLayer {
+        z-index: 3;
+        /* 半透明黑色 */
+        background-color: rgba(28, 28, 28, 0.6);
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .popDiv {
+        width: 400px;
+        height: 200px;
+        background-color: whitesmoke;
+        border: 1px solid black;
+        display: none;
+        position: absolute;
+        z-index: 10;
+      }
+     
+      td span {
+        cursor: pointer;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="popLayer" id="popLayer"></div>
+    <div class="popDiv" id="popBox">
+      <div id="popNav">
+        <button id="closeBtn">关闭</button>
+      </div>
+      <div id="popContent"></div>
+    </div>
+    <table
+      border="1px solid black"
+      cellspacing="0"
+      cellpadding="3px 5px"
+      align="center"
+    >
+      <thead>
+        <th>序号</th>
+        <th>待办事项1</th>
+        <th>待办事项2</th>
+        <th>待办事项3</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>123456789<span></span></td>
+          <td>123167891<span></span></td>
+          <td>1232123456<span></span></td>
+          <td>123<span></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var td = document.getElementsByTagName("td");
+      var popBox = document.getElementById("popBox");
+      var popLayer = document.getElementById("popLayer");
+      var popContent=document.getElementById("popContent");
+      var textArr = [];
+      //var tdSpan = document.querySelectorAll("td span");
+      for (let i = 0; i < td.length; i++) {
+        if (td[i].innerText.length > 5) {
+          textArr[i] = td[i].innerText;
+          //stringObject.substr(start,length)
+          //拼串得<span>...</span>
+
+          //创建带有省略号的span
+          td[i].innerHTML = td[i].innerText.substr(0, 5) + "<span>...</span>";
+          //获取含有省略号的span
+          var span = document.getElementsByTagName("span");
+          //为span绑定点击事件
+          span[i].onclick = popBox01.bind(null,i);
+          
+        }
+      }
+     
+      function popBox01(i) {
+        popContent.innerText = textArr[i];
+        popBox.style.display = "block";
+        popLayer.style.display = "block";
+        
+      }
+      function closeBox() {
+        popBox.style.display = "none";
+        popLayer.style.display = "none";
+      }
+      var closeBtn = document.getElementById("closeBtn");
+      closeBtn.onclick = closeBox;
+    </script>
+  </body>
+</html>
