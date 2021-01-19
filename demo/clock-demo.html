@@ -1,0 +1,143 @@
+<<<<<<< HEAD:clock-demo.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            width: 600px;
+            height: 320px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            /* text-align: center; */
+            padding-left: 100px;
+            line-height: 320px;
+            font-size: 80px;
+        }
+
+        .mill {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock"></div>
+</body>
+<script>
+    // 结束时间
+
+
+   // let endTime = '2021-01-15 00:00:00';
+
+    let endTime = '2021-01-14 00:00:00';
+
+   // let endTime = '2021-01-13 18:37:00';
+
+
+
+    function timing() {
+        // 开始时间-当前时间
+        let startTime = new Date();
+        // 转换为日期格式
+        let endDate = new Date(endTime);
+       // console.log(endDate);转换后的日期格式：Thu Jan 14 2021 00:00:00 GMT+0800 (中国标准时间)
+        // 时间差 = 结束时间-开始时间 获得毫秒单位得时间差值
+        let diff = endDate - startTime;
+        //console.log(diff);时间差换算成了秒
+        if (diff <= 0) {
+            document.getElementsByClassName("clock")[0].innerHTML = "00:00:00:00<span class='mill'>000</span>";
+            return
+        }
+        // console.log("时间差", diff);
+        let day = Math.floor(diff / (1000 * 60 * 60 * 24)),  //计算天数
+            hour = Math.floor(diff / (1000 * 60 * 60) % 24),  //计算小时数
+            min = Math.floor(diff / (1000 * 60) % 60),  //计算分钟数
+            sec = Math.floor(diff / 1000 % 60), //计算秒数
+            mill = Math.floor(diff % 1000);  //计算毫秒数
+        // 小于10得数字前面加个0
+        if (day < 10) { day = "0" + day }
+        if (hour < 10) { hour = "0" + hour }
+        if (min < 10) { min = "0" + min }
+        if (sec < 10) { sec = "0" + sec }
+        if (mill < 10) { mill = "0" + mill }
+        document.getElementsByClassName("clock")[0].innerHTML = day + ":" + hour + ":" + min + ":" + sec + "<span class='mill'>" + mill + "</span>";
+        setTimeout(() => {
+            // 1毫秒结束后再调用自己
+            timing()
+        }, 1)
+    }
+    timing()
+</script>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            width: 600px;
+            height: 320px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            /* text-align: center; */
+            padding-left: 100px;
+            line-height: 320px;
+            font-size: 80px;
+        }
+
+        .mill {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock"></div>
+</body>
+<script>
+    // 结束时间
+    let endTime = '2021-01-13 18:37:00';
+
+    function timing() {
+        // 开始时间-当前时间
+        let startTime = new Date();
+        // 转换为日期格式
+        let endDate = new Date(endTime);
+        // 时间差 = 结束时间-开始时间 获得毫秒单位得时间差值
+        let diff = endDate - startTime;
+        console.log(diff);
+        if (diff <= 0) {
+            document.getElementsByClassName("clock")[0].innerHTML = "00:00:00:00<span class='mill'>000</span>";
+            return
+        }
+        // console.log("时间差", diff);
+        let day = Math.floor(diff / (1000 * 60 * 60 * 24)),  //计算天数
+            hour = Math.floor(diff / (1000 * 60 * 60) % 24),  //计算小时数
+            min = Math.floor(diff / (1000 * 60) % 60),  //计算分钟数
+            sec = Math.floor(diff / 1000 % 60), //计算秒数
+            mill = Math.floor(diff % 1000);  //计算毫秒数
+        // 小于10得数字前面加个0
+        if (day < 10) { day = "0" + day }
+        if (hour < 10) { hour = "0" + hour }
+        if (min < 10) { min = "0" + min }
+        if (sec < 10) { sec = "0" + sec }
+        if (mill < 10) { mill = "0" + mill }
+        document.getElementsByClassName("clock")[0].innerHTML = day + ":" + hour + ":" + min + ":" + sec + "<span class='mill'>" + mill + "</span>";
+        setTimeout(() => {
+            // 1毫秒结束后再调用自己
+            timing()
+        }, 1)
+    }
+    timing()
+</script>
+
+>>>>>>> a24cbab632414198103639094d8b47cd48e0f394:demo/clock-demo.html
+</html>
