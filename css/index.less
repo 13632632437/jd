@@ -240,6 +240,9 @@
 // 搜索与logo部分
 .search-wrap {
     width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
 
     .w {
         height: 141px;
@@ -332,7 +335,7 @@
     .secondary-nav {
         position: absolute;
         display: flex;
-        bottom: 0;
+        bottom: 10px; // 太贴下边了，往上调了点
         left: 203px;
 
         li {
@@ -401,12 +404,421 @@
         width: 76px;
         height: 76px;
         background: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
         box-sizing: border-box;
         padding: 5px;
+
         img {
             width: 100%;
             height: 100%;
         }
     }
+}
+
+body {
+    // 发现body是有背景色的，搜索栏是白色的
+    background-color: #f4f4f4;
+}
+
+// 轮播图部分
+.content {
+    width: 100%;
+
+    .w {
+        height: 800px;
+        display: flex;
+    }
+
+    // 分类栏
+    .classify {
+        width: 190px;
+        height: 470px;
+        background-color: #fff;
+        margin-right: 10px;
+
+        ul {
+            margin-top: 10px;
+
+            li {
+                height: 25px;
+                line-height: 25px;
+                padding-left: 18px;
+                font-size: 0;
+                // li设置font-size为0，子元素设置自己font-size可消除html换行造成的空格
+
+                &:hover {
+                    background-color: #d9d9d9;
+                }
+
+                a {
+                    color: #636363;
+                    font-size: 14px;
+
+                    &:hover {
+                        color: @jdred;
+                    }
+                }
+
+                span {
+                    color: #636363;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    // 中间大轮播图
+    .swiper {
+        width: 590px;
+        height: 470px;
+        margin-right: 10px;
+        position: relative;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            li {
+                width: 100%;
+                height: 100%;
+                // 通过定位让所有的轮播图元素重叠在一起
+                position: absolute;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        &:hover {
+            .swiper-icon {
+                display: block;
+            }
+        }
+
+        // 左右按钮
+        .swiper-icon {
+            position: absolute;
+            width: 25px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, .15);
+            transform: translate(0, -50%);
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            // 默认不显示,鼠标移入轮播图才显示
+            display: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, .5);
+            }
+        }
+
+        .left-btn {
+            top: 50%;
+            left: 0;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+
+        .right-btn {
+            top: 50%;
+            right: 0;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+    }
+
+    // 右侧竖排三小块轮播图
+    .small-swiper {
+        width: 190px;
+        height: 470px;
+        margin-right: 10px;
+        position: relative;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            li {
+                width: 100%;
+                height: 100%;
+                // 让三个li重叠起来
+                position: absolute;
+
+                img {
+                    width: 100%;
+                    height: 150px;
+                    margin-bottom: 10px;
+                    display: block;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .swiper-icon {
+                display: block;
+            }
+        }
+
+        // 左右按钮
+        .swiper-icon {
+            position: absolute;
+            width: 25px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, .15);
+            transform: translate(0, -50%);
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            // 默认不显示,鼠标移入轮播图才显示
+            display: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, .5);
+            }
+        }
+
+        .small-swiper-left-btn {
+            top: 50%;
+            left: 0;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+
+        .small-swiper-right-btn {
+            top: 50%;
+            right: 0;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+    }
+
+    // 用户信息栏
+    .info {
+        width: 190px;
+        height: 470px;
+        background-color: #fff;
+
+
+        // 用户头像和登录
+        .top {
+            width: 100%;
+            height: 102px;
+            box-sizing: border-box;
+            padding: 0 20px;
+
+            .avatar-and-name {
+                width: 100%;
+                height: 67px;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+
+                // 头像
+                .avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 2px solid #fff;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+                    margin-right: 10px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                // 欢迎登录
+                .user-name {
+                    font-size: 12px;
+                    line-height: 22px;
+
+                    .hover-red {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: @jdred;
+                        }
+                    }
+                }
+
+            }
+
+            // 福利与会员
+            .welfare-member {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+
+                div {
+                    width: 70px;
+                    height: 25px;
+                    line-height: 25px;
+                    border-radius: 12px;
+                    font-size: 13px;
+                    text-align: center;
+                    cursor: pointer;
+
+                }
+
+                .welfare {
+                    background-color: #e1251b;
+                    color: #fff;
+                }
+
+                .member {
+                    background-color: #363634;
+                    color: #e5d790;
+                }
+
+                .hover-bg {
+                    &:hover {
+                        background-color: #c81623;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        // 分割线
+        .divide {
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+            margin: 10px auto;
+        }
+
+        // 京东快报
+        .newspaper {
+            width: 100%;
+
+            .title-wrap {
+                box-sizing: border-box;
+                padding: 0 10px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+
+                .title {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .more {
+                    font-size: 12px;
+                    color: #999999;
+                    position: relative;
+                    width: 50px;
+
+                    .icon {
+                        display: inline-block;
+                        width: 3px;
+                        height: 3px;
+                        border-top: 2px solid #999;
+                        border-right: 2px solid #999;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 5px;
+                        right: 15px;
+                    }
+
+                    &:hover {
+                        color: @jdred;
+
+                        .icon {
+                            border-color: red;
+                        }
+                    }
+                }
+            }
+
+            .news {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0 12px;
+                li {
+                    width: 100%;
+                    font-size: 12px;
+
+                    .headline {
+                        display: inline-block;
+                        width: 100%;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                        .news_tag {
+                            height: 16px;
+                            width: 35px;
+                            display: inline-block;
+                            color: #e1251b;
+                            text-align: center;
+                            list-style: 35px;
+                            background-color: #fdeeed;
+                            margin-right: 10px;
+                        }
+
+                        &:hover {
+                            color: #e1251b;
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        // 服务列表
+        .service-list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: 33%;
+                height: 55px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 12px;
+
+                .img-wrap {
+                    width: 28px;
+                    height: 28px;
+                    margin-bottom: 5px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .hover-img{
+                        display: none;
+                    }
+                }
+                &:hover {
+                   .hover-img{
+                       display: block;
+                   }
+                   .image {
+                       display: none;
+                   }
+                }
+            }
+        }
+    }
+
 }
