@@ -15,9 +15,6 @@ logoA.onmouseleave = function () {
   }, 1000)
 }
 
-
-
-
 // 轮播图部分js
 let index = 0;
 // 获取元素

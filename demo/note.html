@@ -18,8 +18,15 @@
     <!-- 所有需要在一行显示的都可以使用display：flex -->
     <!-- a标签不继承颜色<li><a href="javascrip void(0);:"></a>免费注册</a></li> -->
     <!--  line-height只有px和倍数(数字)  当值为数字和百分比的时候都是相对于字体而言的-->
-    <!-- text-align：center是文字相对行内标签（内联标签）水平居中   align-items：center;是标签相对于父标签垂直居中  
-        align：center；表格独有属性，不属于样式属性，作用：让表格相对于父元素垂直水平居中-->
+    <!-- text-align：center是文字相对行内标签（内联标签）水平居中   
+        align-items：center;是标签相对于父标签垂直居中 
+        vertitcal-align:center设置元素的垂直对齐方式 
+        align：center；表格独有属性，不属于样式属性，作用：让表格相对于父元素垂直水平居中
+    -->
+    <!--
+        margin:0 auto 水平居中，上下外边距为0，水平居中的前提条件是自身有固定宽度 margin：auto水平居中  
+        margin:0 auto失效的情况--浮动  设置固定定位、绝对定位 相对定位left值不为0 
+    -->
     <!-- （）＝＞{} 等价于  function ()｛} -->
     <!--
         url拼接参数：http://www.yanggb.com?flag=1&type=normal&role=customer  
@@ -144,7 +151,7 @@
          A：f1：step1 表格设置宽度以及表格布局table{width:1000px;table-layout:fixed} step2 th,td{white-space: nowrap;flex-wrap:nowrap; overflow:hidden;}
             f2：td{max-width: 120px; white-space: nowrap; overflow: hidden;}
          q:控制td宽度固定,超出表格内容以省略号显示
-         A：table{width:1000px;table-layout:fixed;}td{white-space: nowrap; overflow:hidden；text-overflow: ellipsis;}
+         A：table{width:1000px;table-layout:fixed;}td{white-space: nowrap; overflow:hidden；text-overflow: ellipsis;} table-layout:fixed;//平分宽度不拉伸
          q： 表格居中(表格独有属性)？
          A：align:center  
          Q：设置表格内部文字居中？
@@ -181,5 +188,6 @@
 -->
 <!-- z-index要和position(absolute/fixed)配合使用，不然则会失效 -->
 <!-- position:relative相对定位 -->
+<!-- 404 路径错误 -->
 </body>
 </html>

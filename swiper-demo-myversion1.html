@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .swiper {
+        width: 400px;
+        height: 400px;
+        margin: 200px auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="swiper"></div>
+    <script>
+      let swiper = document.getElementsByClassName("swiper");
+      console.log(swiper[0]);
+      let bgImg = [
+        "./image/small-swiper (1).webp",
+        "./image/small-swiper (2).webp",
+        "./image/small-swiper (3).webp",
+        "./image/small-swiper (4).webp"
+      ];
+      // let bgImg = [
+      // "./image/1.jpg",
+      // "./image/2.jpg",
+      // "./image/3.jpg",
+      // "./image/4.jpg",
+      // "./image/5.jpg",
+      // ];    
+      let currentImg = 0;
+      setInterval(() => {
+        if (currentImg > 3) {
+          currentImg = 0;
+        }
+        swiper[0].style.backgroundImage = "url("+bgImg[currentImg]+")";
+        currentImg++;
+      }, 1000);
+    </script>
+  </body>
+</html>
