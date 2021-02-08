@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .demo {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      /* 过渡属性: 参数按顺序，可以只写想加的
+           过渡属性的名称  监听样式的变化开始动画，可以是width，当width变化时就开始过渡动画，也可以是height，top等等，all是指监听所有样式，一旦有样式变化，就开始过渡动画
+           过渡的时间      动画从开始到结束的时间，这里是指从起始位置平移到100px用到的时间
+           运动曲线        移动过程的速度曲线，先快后慢，还是匀速
+           延迟时间        延迟几秒后执行动画
+            */
+      /* 这里是指有任何样式变化是就执行过渡动画，动画从开始到结束历时2s, 动画是匀速执行，动画是在延迟1秒后执行 */
+      transition: all 2s linear 1s;
+    }
+
+    .demo:hover {
+      transform: translateX(100px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo"></div>
+</body>
+
+</html>
